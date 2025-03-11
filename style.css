@@ -1,0 +1,232 @@
+/*
+ * DO NOT HOTLINK FONTS FROM MY SITE. 
+ * PLEASE EMBED FROM GOOGLE FONTS OR HOST IT YOURSELF, THANK YOU :)
+ */
+
+/* LICENSE: https://eggramen.neocities.org/fonts/Nunito_OFL.txt */
+@font-face {
+  font-family: "Nunito";
+  src: url("https://eggramen.neocities.org/fonts/Nunito-VariableFont_wght.ttf");
+ }
+
+body {
+  color: #edf2ed;
+  background: #0b5846;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  }
+  
+a {
+  color: inherit;
+  font-weight: bold;
+  }
+  
+a:focus {  
+  outline: 2px solid #16cf54;
+  }
+  
+hr {
+  border-color: #13641f;
+  margin: 1.75rem 1.5rem;
+  }
+  
+blockquote {
+  border-left: 2px solid;
+  margin: 0.1rem 0.5rem;
+  padding: 1px 1rem;
+  }
+
+/* Main container; all content goes in here. */  
+.wrapper {
+  margin: 2rem 10rem;
+  }
+
+/* Top section with page title, optional description.*/
+.header {
+  padding: 0 0.25rem 0.75rem 0.25rem;
+  }
+  
+.header h1 {
+  margin: 0.15em 0;
+  font-weight: bold;
+  }
+  
+.header p {
+  font-size: 0.95em;
+  }
+  
+/* The navbar of tabs. The illusion of a tab connecting into the main box is created by
+ * giving the nav tab links an extra thick bottom border that covers the top border of
+ * the main content box, and making the "current" tab's bottom border the same color
+ * as the inside of the box. 
+ * Some padding trickery is needed to maintain this illusion without weird janky corner
+ * bits being visible, so if you change the border thickness, BE AWARE you may need to
+ * fiddle with this to make everything look nice again. 
+ */
+.navigation {
+  margin-bottom: -2px; /* cover the top border of the main box */
+  margin-left: 1rem; /* so the leftmost tab, if selected, doesn't create a weird border gap at the side. */
+  }
+  
+.navigation a {
+  color: #edf2ed;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 1.05rem; /* our padding trick makes buttons weirdly tall, so this helps fix it */
+  }
+  
+.nav-button {
+  background: #0b1516;
+  padding: 0.35em 1.5em 0em 1.5em;
+  border-radius: 15px 3px 0 0;
+  display: inline-block;
+  text-align: center;
+  border-bottom: 4px solid #0b1516;
+  }
+  
+/* For the link to the page you're currently on. */
+.navigation .current-page {
+  background: #b3dec5;
+  color: #123923;
+  border: 2px solid #0b1516;
+  border-bottom: 4px solid #b3dec5;
+  margin-bottom: -2px; /* fiddly trickery to make the 'tab connecting to main' illusion work. */
+  padding-top: 6px;
+  padding-bottom: 2px;
+  border-radius: 15px 3px 5px 5px; /* round bottom corners to minimize visibly janky edges */
+  }
+  
+.nav-button:focus-within {
+  outline: 2px solid #00cb72;
+  background: #00513e;
+  border-bottom-color: #00513e;
+  }
+  
+
+/* The main content of the page goes in here. */
+.main {
+  border: 2px solid #0b1516;
+  border-radius: 2px 10px 2px 2px;
+  overflow: hidden; /*so background doesn't overflow corners*/
+  }
+  
+.main a {
+  color: #102323;
+  }
+    
+.main-inner {
+  background: #edf2ed;
+  color: #123923;
+  background: linear-gradient(#b3dec5 0px, #d1f3d1 150px);
+  padding: 0.25rem 1.5rem 1rem 1.5rem;
+  display: block;
+  }
+  
+/* Prevent large image overflow. */
+.main-inner img {
+  max-width: 100%;
+  height: auto;
+  }
+  
+
+/*Text outside the box, at the bottom of the page.*/
+.footer {
+  font-size: 0.9em;
+  text-align: center;
+  }
+
+
+/* For narrower screens. */
+@media (max-width: 1280px) {
+  .wrapper {
+    width: 80%;
+    margin: 1.5rem auto;
+    }
+  }
+
+@media (max-width: 800px) {
+  .wrapper {
+    width: 87%;
+    margin: 1rem auto;
+    }
+  }
+  
+/* Rearrange into column format for mobile. */
+@media (orientation: portrait), (max-width: 750px) {
+  .wrapper {
+    width: 95%;
+   }
+   
+  .header {
+    padding-bottom: 1px;
+    }
+   
+  .navigation {
+   margin: 0;
+   }
+   
+   /* Since the 'tab' look doesn't work in a vertical layout, undo our fiddly padding/border tricks and do something more normal instead. */
+  .nav-button {
+    font-size: 1.05em;
+    text-align: center;
+    display: block;
+    padding: 0.5rem 1.5rem;
+    margin: 0.375rem 0;
+    border-radius: 5px;
+    }
+  
+  .navigation .current-page {
+    border-bottom: 2px solid #0b1516;
+    margin-bottom: 0.375rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    }
+  
+  .main {
+    border-radius: 2px; 
+    }
+  }
+  
+/* Alternate color scheme for browsers preferring dark mode. 
+ * If you change the color scheme and don't care to maintain this,
+ * just remove this media query section. */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #141615;
+    color: #6af155;
+    }
+    
+  .nav-button {
+    background: #006850;
+    border-bottom: 4px solid #006850;
+    }
+    
+  .navigation .current-page {
+    background: #174522;
+    color: #edf2ed;
+    border: 2px solid #006850;
+    border-bottom: 4px solid #174522;
+    }
+    
+  /* Buttons display slightly differently on mobile -- make sure the border colors are correct! */
+  @media(orientation: portrait), (max-width:750px) {
+    .navigation .current-page {
+      border-bottom: 2px solid #006850;
+      }
+    }
+  
+  .main {
+    border: 2px solid #006850;
+    }
+    
+  .main-inner {
+    background: #09120a;
+    color: #edf2ed;
+    background: linear-gradient(#174522 0px, #0b1516 150px);
+    }
+    
+  .main-inner a {
+    color: #4cde3e;
+    }
+}
